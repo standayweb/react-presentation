@@ -1,0 +1,19 @@
+{
+  "name": "react-presentation",
+  "version": "0.0.0",
+  "description": "A presentation on react.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/standayweb/react-presentation.git"
+  },
+  "author": "Stan Day <stan@standayweb.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/standayweb/react-presentation/issues"
+  },
+  "homepage": "https://github.com/standayweb/react-presentation#readme"
+}
