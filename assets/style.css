@@ -1,0 +1,20 @@
+
+.MySelect {
+    border: 1px solid #999;
+    display: inline-block;
+    padding: 5px;
+    background: white;
+}
+
+.MySelect .MyOption {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.MySelect .MyOption.active {
+    background: red;
+    color: white;
+}

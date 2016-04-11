@@ -1,6 +1,12 @@
 {
   "extends": "airbnb",
   "rules": {
-    "react/prefer-stateless-function": 0
+    "react/prefer-stateless-function": 0,
+    "indent": [
+      1,
+      "tab"
+    ],
+    "no-multiple-empty-lines": [2, {"max": 3}],
+    "max-len": [2, {"code": 100, "tabWidth": 2, "ignoreUrls": true}]
   }
 }
