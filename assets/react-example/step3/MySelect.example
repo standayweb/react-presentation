@@ -23,10 +23,18 @@ class MySelect extends Component {
 	render() {
 		return (
 			<div className="MySelect">
-				<MyOption selectedOption={this.state.selected} onSelect={this.onSelect}>Volvo</MyOption>
-				<MyOption selectedOption={this.state.selected} onSelect={this.onSelect}>Saab</MyOption>
-				<MyOption selectedOption={this.state.selected} onSelect={this.onSelect}>Mercedes</MyOption>
-				<MyOption selectedOption={this.state.selected} onSelect={this.onSelect}>Audi</MyOption>
+				<MyOption selected={this.state.selected} onSelect={this.onSelect}>
+				    Volvo
+                </MyOption>
+				<MyOption selected={this.state.selected} onSelect={this.onSelect}>
+				    Saab
+                </MyOption>
+				<MyOption selected={this.state.selected} onSelect={this.onSelect}>
+				    Mercedes
+                </MyOption>
+				<MyOption selected={this.state.selected} onSelect={this.onSelect}>
+				    Audi
+                </MyOption>
 			</div>
 		);
 	}
