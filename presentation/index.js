@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
-import { Appear, CodePane, Deck, Fill, Heading, Layout, Slide, Spectacle } from 'spectacle';
+import { Appear, CodePane, Deck, Fill, Heading, Layout, Slide, Spectacle, Image } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
+
+// Import image preloader util
+import preloader from 'spectacle/lib/utils/preloader';
 
 // Custom Components
 import MySelect1 from '../assets/react-example/step1/MySelect';
 import MySelect2 from '../assets/react-example/step2/MySelect';
 import MySelect3 from '../assets/react-example/step3/MySelect';
+import TwitterTextbox from '../assets/twitter-textbox-example/TwitterTextbox';
 
 // Require CSS
 require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 require('../assets/style.css');
+
+const images = {
+  reactVsJquery: require('../assets/react-vs-jquery.png'),
+};
+
+preloader(images);
 
 const theme = createTheme({
   primary: '#61DAFB',
@@ -63,14 +73,42 @@ const notes = {
           checking if this.props.children which is our value is equal to
           this.props.selected, if it is we will add an active class to it.`,
 
-  slide8: `There is loads of other advantages of react which I don't really have time to cover in
+
+  slide8: `The majority of Javascript code on the web right now uses jQuery, I thought
+            it would be a useful exercise to compare some code written in jQuery to code written
+            in react. Bare in mind that reacts value most comes out in a full app rather than small
+            examples.`,
+
+  slide9: `Here we have a simplified version of the twitter text area, it displays a count
+            of characters you have left, disabled the button if the characters in the textarea are
+            greater than 140 or less than one. Also we have a toggle button for adding an image.
+            While the image button is toggled on we will count it as 23 characters in the textarea
+            and act accordingly.`,
+
+  slide10: `Here is the jquery code and html for this functionality, it's not too bad. I
+            made an update function to handle the reading then writing to the dom when we type in
+            the textbox or click the photo button. This approach helps but can only go so far.`,
+
+  slide11: `With jquery, each developer is completely responsible for code organization and
+            structure as there is so many ways to do one thing.The code would probably end up
+            looking more like this in some cases. Even if this has comments it is still hard to
+            understand and when more complex features need added it just gets un-manageable.`,
+
+  slide12: `Here is the react solution, we simply declare what the output should look like
+            based on the state. Then when the state changes it will rerender the component in a
+            highly performant way using the virtual dom.`,
+
+  slide13: `This diagram basically shows the difference in code structure between jquery
+            and react.`,
+
+  slide14: `There is loads of other advantages of react which I don't really have time to cover in
           this talk like the virtual dom (how react works under the covers to be very performant),
           react native (allows you to write native apps with react)`,
 
-  slide9: `Simply stated, one main value of React rests upon the fact that it provides
-          a simple and maintainable pattern for creating a tree of UI components. Imagine
-          how simple programming a UI could be by defining the entire interface of your
-          application using React components alone.`,
+  conclusion: `Simply stated, one main value of React rests upon the fact that it provides
+              a simple and maintainable pattern for creating a tree of UI components. Imagine
+              how simple programming a UI could be by defining the entire interface of your
+              application using React components alone.`,
 };
 
 class Presentation extends Component {
@@ -198,15 +236,67 @@ class Presentation extends Component {
             </Layout>
           </Slide>
 
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide8}>
+            <Heading size={1} caps fit textColor="primary" margin="0 0 20px 0">
+              React vs jQuery
+            </Heading>
+          </Slide>
 
-          <Slide bgColor="black" notes={notes.slide8}>
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide9}>
+            <TwitterTextbox />
+          </Slide>
+
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide10}>
+            <CodePane
+              textSize={11}
+              lang="jsx"
+              source={require('raw!../assets/twitter-textbox-example/TwitterTextbox-jquery.example')}
+              margin="0 0 20px 0"
+            />
+            <CodePane
+              textSize={11}
+              lang="jsx"
+              source={require('raw!../assets/twitter-textbox-example/TwitterTextbox-jquery-html.example')}
+              margin="0 0 0 0"
+            />
+          </Slide>
+
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide11}>
+            <CodePane
+              textSize={11}
+              lang="jsx"
+              source={require('raw!../assets/twitter-textbox-example/TwitterTextbox-jquery-convoluted.example')}
+              margin="0 10px 0 0"
+            />
+          </Slide>
+
+
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide12}>
+            <CodePane
+              textSize={11}
+              lang="jsx"
+              source={require('raw!../assets/twitter-textbox-example/TwitterTextbox-react.example')}
+              margin="0 0 0 0"
+            />
+          </Slide>
+
+
+          <Slide transition={['slide']} bgColor="black" notes={notes.slide13}>
+            <Image
+              src={images.reactVsJquery.replace('/', '')}
+              margin="0px auto 40px" height="500px"
+            />
+          </Slide>
+
+
+          <Slide bgColor="black" notes={notes.slide14}>
             <Heading size={1} caps fit textColor="primary">
               Other Stuff...
             </Heading>
           </Slide>
 
 
-          <Slide bgColor="black" notes={notes.slide9}>
+          <Slide bgColor="black" notes={notes.conclusion}>
             <Heading size={1} caps fit textColor="primary">
               Conclusion
             </Heading>

@@ -1,0 +1,7 @@
+
+<div class="twitter-textbox">
+    <textarea class="form-control"></textarea><br>
+    <span>140</span>
+    <button class="js-tweet-button" disabled>Tweet</button>
+    <button class="js-add-photo-button">Add Photo</button>
+</div>
