@@ -1,6 +1,6 @@
 ## React Presentation
 
-This is a presentation about [reactjs](https://facebook.github.io/react/), built with reactjs and the use of [spectacle](http://formidable.com/open-source/spectacle/). It uses interactive examples to actually live demo the code without ever leaving the presentation. This is still a work in progress and feedback/contributions are welcome. The basic stuff I have put in for this so far is heavily based off [this post](http://developer.telerik.com/featured/elevator-pitch-react/).
+This is a presentation about [reactjs](https://facebook.github.io/react/), built with reactjs and the use of [spectacle](http://formidable.com/open-source/spectacle/). It uses interactive examples to actually live demo the code without ever leaving the presentation. This is still a work in progress and feedback/contributions are welcome. The basic stuff I have put in for this so far is heavily based off [this post](http://developer.telerik.com/featured/elevator-pitch-react/), [this post](http://reactfordesigners.com/labs/reactjs-introduction-for-people-who-know-just-enough-jquery-to-get-by/).
 
 I currently have the presentation live at [http://standayweb.github.io/react-presentation](http://standayweb.github.io/react-presentation). You can press alt+p to go into presenter mode and see the notes.
 

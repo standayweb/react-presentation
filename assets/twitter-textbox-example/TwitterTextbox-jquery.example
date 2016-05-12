@@ -1,0 +1,25 @@
+
+function update() {
+  var remainingCharacters = 140 - $("textarea").val().length;
+  if ($(".js-add-photo-button").hasClass("is-on")) {
+    remainingCharacters -= 23;
+  }
+
+  $("span").text(remainingCharacters);
+  if (remainingCharacters > 0 && remainingCharacters <= 140) {
+    $(".js-tweet-button").prop("disabled", false);
+  } else {
+    $(".js-tweet-button").prop("disabled", true);
+  }
+}
+
+$("textarea").on("input", update);
+
+$(".js-add-photo-button").on("click", function() {
+  if ($(this).hasClass("is-on")) {
+    $(this).removeClass("is-on").text("Add Photo");
+  } else {
+    $(this).addClass("is-on").text("✓ Photo Added");
+  }
+  update();
+});
